@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Mvc;
@@ -55,14 +56,25 @@ namespace Lib.AspNetCore.Mvc.Ndjson
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>A <see cref="Task"/> that represents the asynchronous write operation.</returns>
-        public async Task WriteAsync(object value)
+        public Task WriteAsync(object value)
+        {
+            return WriteAsync(value, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Asynchronously writes the specified value to the stream.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="cancellationToken">A token that may be used to cancel the write operation.</param>
+        /// <returns>A <see cref="Task"/> that represents the asynchronous write operation.</returns>
+        public async Task WriteAsync(object value, CancellationToken cancellationToken)
         {
             if (!_readyTaskCompletionSource.Task.IsCompletedSuccessfully)
             {
                 await _readyTaskCompletionSource.Task;
             }
 
-            await _ndjsonTextWriter.WriteAsync(value);
+            await _ndjsonTextWriter.WriteAsync(value, cancellationToken);
         }
 
         /// <summary>

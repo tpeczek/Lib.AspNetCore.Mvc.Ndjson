@@ -3,6 +3,7 @@ using System.IO;
 using System.Text;
 using System.Text.Json;
 using System.Text.Encodings.Web;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Net.Http.Headers;
 using Microsoft.Extensions.Options;
@@ -33,13 +34,18 @@ namespace Lib.AspNetCore.Mvc.Ndjson
                 }
             }
 
-            public async Task WriteAsync(object value)
+            public Task WriteAsync(object value)
+            {
+                return WriteAsync(value, CancellationToken.None);
+            }
+
+            public async Task WriteAsync(object value, CancellationToken cancellationToken)
             {
                 Type valueType = value?.GetType() ?? typeof(object);
 
-                await JsonSerializer.SerializeAsync(_writeStream, value, valueType, _jsonSerializerOptions);
-                await _writeStream.WriteAsync(_newlineDelimiter);
-                await _writeStream.FlushAsync();
+                await JsonSerializer.SerializeAsync(_writeStream, value, valueType, _jsonSerializerOptions, cancellationToken);
+                await _writeStream.WriteAsync(_newlineDelimiter, cancellationToken);
+                await _writeStream.FlushAsync(cancellationToken);
             }
 
             public void Dispose()

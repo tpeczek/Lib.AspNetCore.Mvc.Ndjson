@@ -2,6 +2,7 @@
 using System.IO;
 using System.Text;
 using System.Buffers;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
@@ -10,7 +11,6 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Net.Http.Headers;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
-using Lib.AspNetCore.Mvc.Ndjson;
 
 namespace Lib.AspNetCore.Mvc.Ndjson.NewtonsoftJson
 {
@@ -66,7 +66,12 @@ namespace Lib.AspNetCore.Mvc.Ndjson.NewtonsoftJson
                 _jsonSerializer = JsonSerializer.Create(jsonSerializerSettings);
             }
 
-            public async Task WriteAsync(object value)
+            public Task WriteAsync(object value)
+            {
+                return WriteAsync(value, CancellationToken.None);
+            }
+
+            public async Task WriteAsync(object value, CancellationToken cancellationToken)
             {
                 _jsonSerializer.Serialize(_jsonResponseStreamWriter, value);
                 await _textResponseStreamWriter.WriteAsync("\n");
