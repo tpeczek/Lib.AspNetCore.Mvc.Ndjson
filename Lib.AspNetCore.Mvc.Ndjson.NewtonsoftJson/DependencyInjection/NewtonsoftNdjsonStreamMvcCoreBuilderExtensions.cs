@@ -6,16 +6,16 @@ using Lib.AspNetCore.Mvc.Ndjson.NewtonsoftJson;
 namespace Microsoft.Extensions.DependencyInjection
 {
     /// <summary>
-    /// Extensions methods for configuring MVC via an <see cref="IMvcBuilder"/>.
+    /// Extension methods for adding Newtonsoft.Json to <see cref="IMvcCoreBuilder"/>.
     /// </summary>
-    public static class NdjsonStreamMvcBuilderExtensions
+    public static class NewtonsoftNdjsonStreamMvcCoreBuilderExtensions
     {
         /// <summary>
         /// Configures NDJSON specific action result.
         /// </summary>
         /// <param name="builder">The <see cref="IMvcBuilder"/>.</param>
         /// <returns>The <see cref="IMvcBuilder"/>.</returns>
-        public static IMvcBuilder AddNdjsonStreamResult(this IMvcBuilder builder)
+        public static IMvcCoreBuilder AddNewtonsoftNdjsonStreamResult(this IMvcCoreBuilder builder)
         {
             if (builder is null)
             {
