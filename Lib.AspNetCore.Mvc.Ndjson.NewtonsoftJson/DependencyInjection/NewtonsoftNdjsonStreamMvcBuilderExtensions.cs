@@ -11,11 +11,11 @@ namespace Microsoft.Extensions.DependencyInjection
     public static class NewtonsoftNdjsonStreamMvcBuilderExtensions
     {
         /// <summary>
-        /// Configures NDJSON specific action result.
+        /// Configures NDJSON specific action results.
         /// </summary>
         /// <param name="builder">The <see cref="IMvcBuilder"/>.</param>
         /// <returns>The <see cref="IMvcBuilder"/>.</returns>
-        public static IMvcBuilder AddNewtonsoftNdjsonStreamResult(this IMvcBuilder builder)
+        public static IMvcBuilder AddNewtonsoftNdjsonResults(this IMvcBuilder builder)
         {
             if (builder is null)
             {

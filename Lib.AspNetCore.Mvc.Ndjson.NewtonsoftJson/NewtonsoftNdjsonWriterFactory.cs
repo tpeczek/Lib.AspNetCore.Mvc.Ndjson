@@ -107,7 +107,7 @@ namespace Lib.AspNetCore.Mvc.Ndjson.NewtonsoftJson
             _jsonArrayPool = new NewtonsoftNdjsonArrayPool(innerJsonArrayPool);
         }
 
-        public INdjsonWriter CreateWriter(ActionContext context, NdjsonStreamResult result)
+        public INdjsonWriter CreateWriter(ActionContext context, IStatusCodeActionResult result)
         {
             if (context == null)
             {

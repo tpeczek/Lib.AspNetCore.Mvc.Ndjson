@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.Net.Http.Headers;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
 using Lib.AspNetCore.Mvc.Ndjson.Infrastructure;
@@ -64,7 +65,7 @@ namespace Lib.AspNetCore.Mvc.Ndjson
             _options = options?.Value ?? throw new ArgumentNullException(nameof(options));
         }
 
-        public INdjsonWriter CreateWriter(ActionContext context, NdjsonStreamResult result)
+        public INdjsonWriter CreateWriter(ActionContext context, IStatusCodeActionResult result)
         {
             if (context == null)
             {

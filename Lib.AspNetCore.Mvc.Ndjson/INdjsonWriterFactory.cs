@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace Lib.AspNetCore.Mvc.Ndjson
 {
@@ -13,6 +14,6 @@ namespace Lib.AspNetCore.Mvc.Ndjson
         /// <param name="context">The <see cref="ActionContext"/>.</param>
         /// <param name="result">The <see cref="NdjsonStreamResult"/>.</param>
         /// <returns>The new <see cref="INdjsonWriter"/>.</returns>
-        INdjsonWriter CreateWriter(ActionContext context, NdjsonStreamResult result);
+        INdjsonWriter CreateWriter(ActionContext context, IStatusCodeActionResult result);
     }
 }
