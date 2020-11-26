@@ -5,7 +5,7 @@
     <VersionPrefix>2.0.0</VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <Authors>Tomasz Pęczek</Authors>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
     <AssemblyTitle>Lib.AspNetCore.Mvc.Ndjson</AssemblyTitle>
     <AssemblyName>Lib.AspNetCore.Mvc.Ndjson</AssemblyName>
     <PackageId>Lib.AspNetCore.Mvc.Ndjson</PackageId>
