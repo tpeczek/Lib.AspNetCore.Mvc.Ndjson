@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Description>Lib.AspNetCore.Mvc.Ndjson is a library that provides support for NDJSON (Newline Delimited JSON) based structured data streaming to ASP.NET Core MVC. This implementation is based on Newtonsoft Json.NET serializer.</Description>
-    <Copyright>Copyright © 2019 - 2020 Tomasz Pęczek</Copyright>
+    <Copyright>Copyright © 2019 - 2021 Tomasz Pęczek</Copyright>
     <VersionPrefix>4.0.0</VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <Authors>Tomasz Pęczek</Authors>
