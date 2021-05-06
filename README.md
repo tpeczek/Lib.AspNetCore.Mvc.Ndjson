@@ -1,25 +1,8 @@
-# Lib.AspNetCore.Mvc.Ndjson
-[![NuGet version](https://badge.fury.io/nu/Lib.AspNetCore.Mvc.Ndjson.svg)](http://badge.fury.io/nu/Lib.AspNetCore.Mvc.Ndjson) [![NuGet version](https://badge.fury.io/nu/Lib.AspNetCore.Mvc.Ndjson.NewtonsoftJson.svg)](http://badge.fury.io/nu/Lib.AspNetCore.Mvc.Ndjson.NewtonsoftJson)
+# Lib.AspNetCore.Mvc.Ndjson [Archived]
+
+:warning: **This project has been archived as it is legacy and is no longer maintained. Suggested alternative: [Ndjson.AsyncStreams](https://github.com/tpeczek/Ndjson.AsyncStreams)** :warning:
 
 Lib.AspNetCore.Mvc.Ndjson is a library that provides support for NDJSON (Newline Delimited JSON) based structured data streaming to ASP.NET Core MVC.
-
-## Installing
-
-You can install [Lib.AspNetCore.Mvc.Ndjson](https://www.nuget.org/packages/Lib.AspNetCore.Mvc.Ndjson/) from NuGet.
-
-```
-PM>  Install-Package Lib.AspNetCore.Mvc.Ndjson
-```
-
-## Demos
-
-There is a demo project available [here](https://github.com/tpeczek/Demo.AspNetCore.Mvc.FetchStreaming).
-
-## Additional Resources
-
-There is a blog posts available which describe implementation details:
-
-- [Fetch API, Streams API, NDJSON, and ASP.NET Core MVC](https://www.tpeczek.com/2019/04/fetch-api-streams-api-ndjson-and-aspnet.html)
 
 ## Donating
 
